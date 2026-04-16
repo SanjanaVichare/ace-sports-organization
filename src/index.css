@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 252 33% 97%;
+    --foreground: 240 43% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 43% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 43% 14%;
+    --primary: 270 48% 37%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 252 43% 94%;
+    --secondary-foreground: 270 48% 37%;
+    --muted: 252 33% 94%;
+    --muted-foreground: 245 10% 41%;
+    --accent: 43 69% 52%;
+    --accent-foreground: 240 43% 14%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 252 33% 91%;
+    --input: 252 33% 91%;
+    --ring: 270 48% 37%;
+    --radius: 0.75rem;
+
+    /* ACE Brand tokens */
+    --ace-purple: 270 48% 37%;
+    --ace-purple-dark: 270 54% 30%;
+    --ace-purple-light: 258 68% 66%;
+    --ace-violet: 263 83% 58%;
+    --ace-gold: 43 69% 52%;
+    --ace-gold-bright: 47 76% 63%;
+    --ace-bg: 252 33% 97%;
+    --ace-bg-alt: 252 43% 94%;
+    --ace-surface: 0 0% 100%;
+    --ace-surface-soft: 260 43% 96%;
+    --ace-text: 240 43% 14%;
+    --ace-text-muted: 245 10% 41%;
+    --ace-text-low: 240 7% 59%;
+    --ace-success: 142 71% 45%;
+    --ace-error: 0 84% 60%;
+    --ace-warning: 38 92% 50%;
+    --ace-whatsapp: 142 70% 49%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--ace-gold)), hsl(var(--ace-gold-bright)));
+  }
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--ace-purple-dark)), hsl(var(--ace-violet)));
+  }
+  .bg-gradient-purple-dark {
+    background: linear-gradient(135deg, hsl(270 54% 20%), hsl(var(--ace-purple-dark)));
+  }
+  .section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Wave animation */
+@keyframes wave-float {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-20px) translateY(-5px); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-indicator {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(8px); }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out forwards;
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
