@@ -4,12 +4,14 @@ import footballImg from "@/assets/football.jpg";
 import calisthenicsImg from "@/assets/calisthenics.jpg";
 import cricketImg from "@/assets/cricket.jpg";
 import archeryImg from "@/assets/archery.jpg";
+import { Link } from "react-router-dom";
 import { ArrowRight, Target, Dumbbell, Trophy, Crosshair } from "lucide-react";
 
 const offerings = [
   {
     title: "Football",
     image: footballImg,
+    link: "/programs/football",
     desc: "Position-specific training & match simulation",
     icon: Trophy,
     details: [
@@ -23,6 +25,7 @@ const offerings = [
   {
     title: "Calisthenics",
     image: calisthenicsImg,
+    link: "/programs/calisthenics",
     desc: "Bodyweight strength & progressive skills",
     icon: Dumbbell,
     details: [
@@ -36,6 +39,7 @@ const offerings = [
   {
     title: "Cricket",
     image: cricketImg,
+    link: "/programs/cricket",
     desc: "Batting, bowling & fielding technique",
     icon: Target,
     details: [
@@ -49,6 +53,7 @@ const offerings = [
   {
     title: "Archery",
     image: archeryImg,
+    link: "/programs/archery",
     desc: "Precision, focus & competitive marksmanship",
     icon: Crosshair,
     details: [
@@ -84,10 +89,10 @@ const Offerings = () => {
                 onMouseEnter={() => setActiveIndex(i)}
                 onClick={() => setActiveIndex(i)}
                 className={`
-                  relative overflow-hidden cursor-pointer
-                  transition-all duration-500 ease-in-out
-                  ${isActive ? "flex-[4]" : "flex-[1]"}
-                `}
+                relative overflow-hidden cursor-pointer
+                transition-all duration-500 ease-in-out
+                ${isActive ? "flex-[4]" : "flex-[1]"}
+              `}
               >
                 {/* Image */}
                 <img
@@ -98,29 +103,41 @@ const Offerings = () => {
                 />
 
                 {/* Overlay */}
-                <div className={`absolute inset-0 transition-all duration-500 ${isActive
-                  ? "bg-gradient-to-t from-[rgba(26,26,46,0.92)] via-[rgba(26,26,46,0.4)] to-[rgba(26,26,46,0.15)]"
-                  : "bg-[rgba(26,26,46,0.65)]"
-                  }`}
+                <div
+                  className={`absolute inset-0 transition-all duration-500 ${isActive
+                    ? "bg-gradient-to-t from-[rgba(26,26,46,0.92)] via-[rgba(26,26,46,0.4)] to-[rgba(26,26,46,0.15)]"
+                    : "bg-[rgba(26,26,46,0.65)]"
+                    }`}
                 />
 
                 {/* Collapsed label — vertical text */}
-                <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+                    }`}
+                >
                   <span className="text-ace-surface font-heading font-bold text-base tracking-widest [writing-mode:vertical-rl] [text-orientation:mixed] rotate-180 select-none">
                     {sport.title}
                   </span>
                 </div>
 
                 {/* Expanded content */}
-                <div className={`absolute bottom-0 left-0 right-0 p-7 transition-all duration-500 ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
-
+                <div
+                  className={`absolute bottom-0 left-0 right-0 p-7 transition-all duration-500 ${isActive
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4 pointer-events-none"
+                    }`}
+                >
                   {/* Icon + tagline */}
                   <div className="flex items-center gap-2 mb-3">
                     <Icon size={14} className="text-ace-gold" />
-                    <span className="text-ace-gold text-xs font-semibold uppercase tracking-widest">{sport.tagline}</span>
+                    <span className="text-ace-gold text-xs font-semibold uppercase tracking-widest">
+                      {sport.tagline}
+                    </span>
                   </div>
 
-                  <h3 className="text-3xl font-heading font-black text-ace-surface mb-2">{sport.title}</h3>
+                  <h3 className="text-3xl font-heading font-black text-ace-surface mb-2">
+                    {sport.title}
+                  </h3>
                   <p className="text-ace-surface/70 text-sm mb-5">{sport.desc}</p>
 
                   {/* Detail bullets */}
@@ -133,10 +150,13 @@ const Offerings = () => {
                     ))}
                   </ul>
 
-                  <button className="flex items-center gap-2 text-ace-gold font-heading font-bold text-sm group/btn">
+                  <Link
+                    to={sport.link}
+                    className="flex items-center gap-2 text-ace-gold font-heading font-bold text-sm group/btn"
+                  >
                     Explore Program
                     <ArrowRight size={15} className="transition-transform group-hover/btn:translate-x-1" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
@@ -159,7 +179,8 @@ const Offerings = () => {
                   <img
                     src={sport.image}
                     alt={sport.title}
-                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${isOpen ? "scale-105" : "scale-100"}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${isOpen ? "scale-105" : "scale-100"
+                      }`}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[rgba(26,26,46,0.85)] to-[rgba(26,26,46,0.3)]" />
@@ -169,20 +190,30 @@ const Offerings = () => {
                         <Icon size={14} className="text-ace-gold" />
                       </div>
                       <div>
-                        <h3 className="text-ace-surface font-heading font-bold text-lg leading-tight">{sport.title}</h3>
+                        <h3 className="text-ace-surface font-heading font-bold text-lg leading-tight">
+                          {sport.title}
+                        </h3>
                         <p className="text-ace-surface/60 text-xs">{sport.desc}</p>
                       </div>
                     </div>
-                    <div className={`w-6 h-6 rounded-full border border-ace-surface/30 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}>
+                    <div
+                      className={`w-6 h-6 rounded-full border border-ace-surface/30 flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-90" : ""
+                        }`}
+                    >
                       <ArrowRight size={12} className="text-ace-surface" />
                     </div>
                   </div>
                 </div>
 
                 {/* Expandable detail panel */}
-                <div className={`bg-[rgba(26,26,46,0.97)] overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}>
+                <div
+                  className={`bg-[rgba(26,26,46,0.97)] overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                >
                   <div className="px-4 py-4">
-                    <p className="text-ace-gold text-xs font-semibold uppercase tracking-widest mb-3">{sport.tagline}</p>
+                    <p className="text-ace-gold text-xs font-semibold uppercase tracking-widest mb-3">
+                      {sport.tagline}
+                    </p>
                     <ul className="space-y-2 mb-4">
                       {sport.details.map((d) => (
                         <li key={d} className="flex items-center gap-2.5 text-ace-surface/80 text-sm">
@@ -191,9 +222,12 @@ const Offerings = () => {
                         </li>
                       ))}
                     </ul>
-                    <button className="flex items-center gap-1.5 text-ace-gold font-heading font-bold text-sm">
+                    <Link
+                      to={sport.link}
+                      className="flex items-center gap-1.5 text-ace-gold font-heading font-bold text-sm"
+                    >
                       Explore Program <ArrowRight size={14} />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -204,6 +238,6 @@ const Offerings = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Offerings;
