@@ -5,7 +5,7 @@ const SOCIAL_LINKS = [
   { label: "Instagram", icon: Instagram, href: "#", color: "hover:bg-[#E1306C]" },
   { label: "YouTube", icon: Youtube, href: "#", color: "hover:bg-[#FF0000]" },
   { label: "X / Twitter", icon: Twitter, href: "#", color: "hover:bg-[#000000]" },
-  { label: "WhatsApp", icon: MessageCircle, href: "https://wa.me/918452094237", color: "hover:bg-ace-whatsapp" },
+  { label: "WhatsApp", icon: MessageCircle, href: "https://wa.me/918097255129", color: "hover:bg-ace-whatsapp" },
 ];
 
 const FloatingUI = () => {
@@ -55,7 +55,7 @@ const FloatingUI = () => {
 
       {/* DESKTOP WHATSAPP BUTTON */}
       <a
-        href="https://wa.me/918452094237"
+        href="https://wa.me/918097255129"
         target="_blank"
         rel="noopener noreferrer"
         className="hidden lg:flex fixed bottom-8 right-6 z-50 w-14 h-14 rounded-full bg-ace-whatsapp items-center justify-center shadow-xl hover:scale-110 transition-all duration-200"
@@ -110,7 +110,7 @@ const FloatingUI = () => {
 
             {/* CALL */}
             <a
-              href="tel:+918452094237"
+              href="tel:+918097255129"
               className="flex-1 h-11 rounded-xl bg-purple-600 text-white flex items-center justify-center gap-1.5"
             >
               <Phone size={14} />
@@ -119,7 +119,7 @@ const FloatingUI = () => {
 
             {/* WHATSAPP */}
             <a
-              href="https://wa.me/918452094237"
+              href="https://wa.me/918097255129"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 h-11 rounded-xl bg-green-500 text-white flex items-center justify-center gap-1.5"

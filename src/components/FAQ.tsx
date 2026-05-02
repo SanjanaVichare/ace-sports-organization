@@ -7,7 +7,7 @@ const faqs = [
   { q: "Do I need prior sports experience to join?", a: "Not at all! We have dedicated beginner programs designed to build fundamentals from scratch. Our coaches will guide you every step of the way." },
   { q: "What sports does ACE offer?", a: "We currently offer Football, Calisthenics, Cricket, and Archery — each with multiple program tiers from beginner to advanced." },
   { q: "Where are the training sessions held?", a: "Training sessions are held at Nanji Shamji School Ground, near AADI ALLURE, Kanjurmarg East, Mumbai 400042." },
-  { q: "How can I book a free trial?", a: "You can book a free trial by clicking the 'Book Free Trial' button on our website, or reach out via WhatsApp at +91 84520 94237." },
+  { q: "How can I book a free trial?", a: "You can book a free trial by clicking the 'Book Free Trial' button on our website, or reach out via WhatsApp at +91 80972 55129." },
   { q: "What is the schedule for training sessions?", a: "Sessions are held throughout the week with flexible morning and evening slots. Contact us for the latest schedule." },
   { q: "Do you offer school & college coaching programs?", a: "Yes! We provide structured coaching programs for schools and colleges, from PE fundamentals to competitive inter-college training." },
   { q: "What makes ACE different from other academies?", a: "ACE combines discipline-driven coaching, multi-sport expertise, and a performance-first mindset — all under one roof with experienced coaches." },

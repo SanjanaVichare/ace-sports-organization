@@ -23,8 +23,8 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-ace-gold mb-4">Contact</h4>
             <div className="space-y-3 text-ace-surface/60 text-sm">
-              <a href="tel:+918452094237" className="flex items-center gap-2 hover:text-ace-gold transition-colors">
-                <Phone size={14} /> +91 84520 94237
+              <a href="tel:+918097255129" className="flex items-center gap-2 hover:text-ace-gold transition-colors">
+                <Phone size={14} /> +91 80972 55129
               </a>
               <a href="mailto:acexi.official@gmail.com" className="flex items-center gap-2 hover:text-ace-gold transition-colors">
                 <Mail size={14} /> acexi.official@gmail.com

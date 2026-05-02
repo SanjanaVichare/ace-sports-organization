@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import heroImg from "@/assets/hero-bg.png";
 
 const CONTACT_ITEMS = [
-  { icon: Phone, label: "Call", value: "+91 84520 94237", href: "tel:+918452094237" },
+  { icon: Phone, label: "Call", value: "+91 80972 55129", href: "tel:+918097255129" },
   { icon: Mail, label: "Email", value: "acexi.official@gmail.com", href: "mailto:acexi.official@gmail.com" },
   { icon: MapPin, label: "Location", value: "Kanjurmarg East, Mumbai", href: "https://maps.google.com/?q=Kanjurmarg+East+Mumbai" },
 ];
@@ -78,7 +78,7 @@ const CtaBanner = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
-                href="https://wa.me/918452094237"
+                href="https://wa.me/918097255129"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-pill bg-ace-whatsapp text-white font-heading font-bold text-sm hover:opacity-90 transition-opacity active:scale-95"
@@ -87,7 +87,7 @@ const CtaBanner = () => {
                 WhatsApp Us
               </a>
               <a
-                href="tel:+918452094237"
+                href="tel:+918097255129"
                 className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-pill border-2 border-ace-gold text-ace-gold font-heading font-bold text-sm hover:bg-ace-gold hover:text-ace-text transition-colors active:scale-95"
               >
                 <Phone size={16} />
