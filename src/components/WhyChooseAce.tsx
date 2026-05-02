@@ -96,7 +96,6 @@ const ServiceCard = ({
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchCancel}
     >
-      {/* Shine ripple on press */}
       <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
@@ -110,7 +109,6 @@ const ServiceCard = ({
       />
 
       <div className="relative p-6 lg:p-8 flex flex-col flex-1">
-        {/* Number + tag row */}
         <div className="flex items-start justify-between mb-5">
           <span
             className="font-black leading-none select-none"
@@ -126,16 +124,13 @@ const ServiceCard = ({
             className="text-[9px] font-bold tracking-[0.16em] uppercase px-3 py-1.5 rounded-full mt-2 whitespace-nowrap"
             style={{
               color: isDark ? "#0B0612" : "#F5C842",
-              background: isDark
-                ? "rgba(0,0,0,0.12)"
-                : "rgba(245,200,66,0.15)",
+              background: isDark ? "rgba(0,0,0,0.12)" : "rgba(245,200,66,0.15)",
             }}
           >
             {s.tag}
           </span>
         </div>
 
-        {/* Title */}
         <h3
           className="font-black uppercase leading-[0.9] mb-3"
           style={{
@@ -149,32 +144,23 @@ const ServiceCard = ({
           {s.name}
         </h3>
 
-        {/* Animated underline */}
         <div
           style={{
             height: "1.5px",
             marginBottom: "12px",
-            background: isDark
-              ? "rgba(0,0,0,0.18)"
-              : "rgba(255,255,255,0.22)",
+            background: isDark ? "rgba(0,0,0,0.18)" : "rgba(255,255,255,0.22)",
             width: active ? "100%" : "36%",
             transition: "width 0.45s cubic-bezier(0.34, 1.4, 0.64, 1)",
           }}
         />
 
-        {/* Description */}
         <p
           className="text-sm font-light leading-relaxed flex-1"
-          style={{
-            color: isDark
-              ? "rgba(0,0,0,0.55)"
-              : "rgba(255,255,255,0.65)",
-          }}
+          style={{ color: isDark ? "rgba(0,0,0,0.55)" : "rgba(255,255,255,0.65)" }}
         >
           {s.desc}
         </p>
 
-        {/* "Learn more" cue — slides in on touch/hover */}
         <div
           className="flex items-center gap-1.5 mt-4"
           style={{
@@ -189,20 +175,8 @@ const ServiceCard = ({
           >
             Learn more
           </span>
-          <svg
-            width="13"
-            height="13"
-            viewBox="0 0 14 14"
-            fill="none"
-            style={{ color: isDark ? "#0B0612" : "#F5C842" }}
-          >
-            <path
-              d="M1 7h12M8 2l5 5-5 5"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style={{ color: isDark ? "#0B0612" : "#F5C842" }}>
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
@@ -216,9 +190,7 @@ const WhyChooseAce = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
       { threshold: 0.05 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -228,15 +200,11 @@ const WhyChooseAce = () => {
   return (
     <section
       id="why-ace"
-      className="py-14 lg:py-24 px-4 sm:px-6 lg:px-16"
+      className="pt-10 pb-10 lg:pt-14 lg:pb-14 px-4 sm:px-6 lg:px-16"
       style={{ background: "#F5F4FF" }}
     >
-      {/* Header */}
       <div className="text-center mb-8 lg:mb-14">
-        <p
-          className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3"
-          style={{ color: "#4B1FA7" }}
-        >
+        <p className="text-[10px] font-bold tracking-[0.28em] uppercase mb-3" style={{ color: "#4B1FA7" }}>
           What sets us apart
         </p>
         <h2
@@ -251,7 +219,6 @@ const WhyChooseAce = () => {
         </h2>
       </div>
 
-      {/* Grid: 1 col → 2 col (sm) → 3 col (lg) */}
       <div
         ref={ref}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5"

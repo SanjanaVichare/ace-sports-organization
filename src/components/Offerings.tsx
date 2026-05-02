@@ -73,11 +73,18 @@ const Offerings = () => {
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
 
   return (
-    <section id="offerings" className="py-20 bg-ace-bg-alt">
+    <section id="offerings" className="pt-20 pb-10 bg-ace-bg-alt">
       <div ref={ref} className="container mx-auto px-4 section-fade-in">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 text-ace-text">
-          Our <span className="text-ace-purple">CLIENTS</span>
-        </h2>
+        <h2
+          className="font-black uppercase leading-[0.88]"
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "clamp(2.8rem, 8vw, 5rem)",
+            color: "#0B0612",
+          }}
+        >
+          Our <span style={{ color: "#4B1FA7" }}>Programs</span>
+        </h2><br></br>
 
         {/* ── Desktop: horizontal accordion ── */}
         <div className="hidden md:flex h-[500px] gap-2 rounded-2xl overflow-hidden">
