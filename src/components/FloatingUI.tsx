@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { MessageCircle, Phone, Instagram, Youtube, Twitter, X } from "lucide-react";
+import { MessageCircle, Phone, Instagram, Youtube, X } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", icon: Instagram, href: "#", color: "hover:bg-[#E1306C]" },
-  { label: "YouTube", icon: Youtube, href: "#", color: "hover:bg-[#FF0000]" },
-  { label: "X / Twitter", icon: Twitter, href: "#", color: "hover:bg-[#000000]" },
+  { label: "Instagram", icon: Instagram, href: "https://www.instagram.com/acesports_org/", color: "hover:bg-[#E1306C]" },
+  { label: "YouTube", icon: Youtube, href: "https://www.youtube.com/@Acesportsorganizationofficial", color: "hover:bg-[#FF0000]" },
   { label: "WhatsApp", icon: MessageCircle, href: "https://wa.me/918097255129", color: "hover:bg-ace-whatsapp" },
 ];
 
