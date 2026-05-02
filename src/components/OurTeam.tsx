@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import MoizaImg from "../assets/Moiza.jpeg";
 import JakeriyaImg from "../assets/Jakeriya.jpeg";
 import SidImg from "../assets/Sid.jpeg";
-import RiaanImg from "../assets/Riaan.jpeg";
+import RiaanImg from "../assets/image.png";
 import SherwinImg from "../assets/Sherwin.jpeg";
 
 // ─── TEAM DATA ────────────────────────────────────────────────────────────────

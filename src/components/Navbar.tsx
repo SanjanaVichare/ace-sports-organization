@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoImg from "../assets/faviconn.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -26,17 +27,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showTransparent
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showTransparent
           ? "bg-transparent"
           : "bg-ace-surface shadow-md border-b border-border"
-      }`}
+        }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-gradient-purple flex items-center justify-center">
-            <span className="font-heading font-black text-sm text-accent">A</span>
-          </div>
+          <img
+            src={logoImg}
+            alt="ACE Sports"
+            className="w-10 h-10 object-contain"
+          />
           <span className={`font-heading font-bold text-xl ${showTransparent ? "text-ace-surface" : "text-ace-text"}`}>
             ACE <span className="text-ace-gold">Sports</span>
           </span>
@@ -47,9 +49,8 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.href}
-              className={`text-sm font-medium transition-colors flex items-center gap-1 hover:text-ace-gold ${
-                showTransparent ? "text-ace-surface" : "text-ace-text"
-              } ${location.pathname === link.href ? "text-ace-gold" : ""}`}
+              className={`text-sm font-medium transition-colors flex items-center gap-1 hover:text-ace-gold ${showTransparent ? "text-ace-surface" : "text-ace-text"
+                } ${location.pathname === link.href ? "text-ace-gold" : ""}`}
             >
               {link.label}
             </Link>
@@ -78,9 +79,8 @@ const Navbar = () => {
               key={link.label}
               to={link.href}
               onClick={() => setMobileOpen(false)}
-              className={`font-heading font-semibold text-lg py-3 border-b border-border ${
-                location.pathname === link.href ? "text-ace-gold" : "text-ace-text"
-              }`}
+              className={`font-heading font-semibold text-lg py-3 border-b border-border ${location.pathname === link.href ? "text-ace-gold" : "text-ace-text"
+                }`}
             >
               {link.label}
             </Link>
