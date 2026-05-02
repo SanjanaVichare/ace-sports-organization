@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import MeetTheTeam from "@/components/MeetTheTeam";
+import MeetTheTeam from "@/components/OurTeam";
 
 const TeamPage = () => {
   return (

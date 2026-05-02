@@ -17,35 +17,7 @@ const TEAM = [
                 badge: "Sales",
                 imagePath: MoizaImg,
                 name: "Moiza Sherkar",
-                bio: "Short bio or title here.",
-            }
-        ],
-    },
-    {
-        dept: "Sales & Growth",
-        deptKey: "sales",
-        accentColor: "#1A1A2E",
-        members: [
-            {
-                role: "Growth Strategist",
-                badge: "Growth",
-                imagePath: JakeriyaImg,
-                name: "Jakeriya Sherkar",
-                bio: "Short bio or title here.",
-            },
-        ],
-    },
-    {
-        dept: "Administration",
-        deptKey: "admin",
-        accentColor: "#632082",
-        members: [
-            {
-                role: "Programme Administrator",
-                badge: "Admin",
-                imagePath: SidImg,
-                name: "Siddhesh Ghatkar",
-                bio: "Short bio or title here.",
+                bio: "Drives partnerships and revenue strategy across ACE's academy network — turning relationships into results.",
             },
         ],
     },
@@ -55,11 +27,39 @@ const TEAM = [
         accentColor: "#1A1A2E",
         members: [
             {
-                role: "Lead Web Developer",
+                role: "Growth Strategist",
+                badge: "Growth",
+                imagePath: JakeriyaImg,
+                name: "Jakeriya Sherkar",
+                bio: "Identifies and unlocks new market opportunities — from sponsorships to memberships — with a sharp eye for scalable growth.",
+            },
+        ],
+    },
+    {
+        dept: "Administration",
+        deptKey: "admin",
+        accentColor: "#632082",
+        members: [
+            {
+                role: "Programme Director",
+                badge: "Admin",
+                imagePath: SidImg,
+                name: "Siddhesh Ghatkar",
+                bio: "Keeps every programme running without a hitch — managing operations, scheduling, and compliance so nothing falls through the cracks.",
+            },
+        ],
+    },
+    {
+        dept: "Digital & Technology — Apex Digital Studio",
+        deptKey: "dev",
+        accentColor: "#1A1A2E",
+        members: [
+            {
+                role: "Digital Products Lead",
                 badge: "Dev",
                 imagePath: RiaanImg,
                 name: "Riaan Parab",
-                bio: "Short bio or title here.",
+                bio: "Architects and ships the digital products that power ACE — from registration platforms to performance dashboards built for real sport.",
             },
         ],
     },
@@ -69,11 +69,11 @@ const TEAM = [
         accentColor: "#F5C842",
         members: [
             {
-                role: "Media Head",
+                role: "Head of Media & Content",
                 badge: "Media",
                 imagePath: SherwinImg,
                 name: "Sherwin Misquitta",
-                bio: "Short bio or title here.",
+                bio: "Captures the stories that matter — match-day coverage, brand storytelling, and content built to reach real audiences.",
             },
         ],
     },
