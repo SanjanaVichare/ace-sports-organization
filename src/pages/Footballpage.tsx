@@ -322,7 +322,7 @@ function TrustStats() {
 // Mobile: 2x2 grid + stacked credentials
 
 const COACHES = [
-    { name: "Head Coach", role: "UEFA Licensed · 10+ yrs", abbr: "HC" },
+    { name: "Saddam Shaikh", role: "Head Coach", abbr: "HC" },
     { name: "Skills Coach", role: "AIFF Certified", abbr: "SC" },
     { name: "Fitness Coach", role: "Sports Science", abbr: "FC" },
     { name: "Girls' Coach", role: "AIFF D-License", abbr: "GC" },
@@ -610,52 +610,7 @@ function Achievements() {
                 ))}
             </div>
 
-            {/* Marquee strip — scrolling achievement pills, tap to select */}
-            <div className="overflow-hidden">
-                <div
-                    className="flex gap-3 w-max"
-                    style={{ animation: "achMarquee 18s linear infinite" }}
-                >
-                    {[...ACH, ...ACH, ...ACH].map((a, i) => {
-                        const realIndex = i % ACH.length;
-                        const isActive = active === realIndex;
-                        return (
-                            <button
-                                key={i}
-                                onClick={() => handleSelect(realIndex)}
-                                className="flex-shrink-0 flex items-center gap-2.5 px-4 py-3 rounded-full transition-all duration-300 active:scale-95"
-                                style={{
-                                    background: isActive ? "#0B0612" : "white",
-                                    border: isActive
-                                        ? "1.5px solid rgba(75,31,167,0.5)"
-                                        : "1.5px solid rgba(75,31,167,0.12)",
-                                    boxShadow: isActive ? "none" : "0 1px 4px rgba(75,31,167,0.07)",
-                                }}
-                            >
-                                <span style={{ fontSize: "1rem" }}>{a.emoji}</span>
-                                <span
-                                    className="font-black uppercase whitespace-nowrap"
-                                    style={{
-                                        fontFamily: "'Bebas Neue', sans-serif",
-                                        fontSize: "0.95rem",
-                                        color: isActive ? "white" : "#0B0612",
-                                        letterSpacing: "0.03em",
-                                    }}
-                                >
-                                    {a.title}
-                                </span>
-                                {isActive && (
-                                    <div className="w-4 h-4 rounded-full bg-[#F5C842] flex items-center justify-center flex-shrink-0">
-                                        <svg width="7" height="7" viewBox="0 0 8 8" fill="none">
-                                            <path d="M1 4h6M4 1l3 3-3 3" stroke="#0B0612" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </div>
-                                )}
-                            </button>
-                        );
-                    })}
-                </div>
-            </div>
+
 
             <style>{`
                 @keyframes achMarquee {
@@ -672,12 +627,12 @@ function Achievements() {
 // Mobile: stacked list + CTA
 
 const WHY = [
-    { icon: "✅", t: "Structured System", d: "Proven progressive curriculum from fundamentals to advanced tactics." },
-    { icon: "⭐", t: "Pro Coaching", d: "Licensed coaches committed to your long-term growth." },
-    { icon: "🛡️", t: "Discipline", d: "We build athletes with the right mindset, on and off the pitch." },
-    { icon: "🏆", t: "Competitive Exposure", d: "Regular tournaments and inter-school league play." },
-    { icon: "💛", t: "Safe Environment", d: "Inclusive, secure, and encouraging for every player." },
-    { icon: "📈", t: "Growth Oriented", d: "We track every player's journey and celebrate milestones." },
+    { t: "Structured System", d: "Proven progressive curriculum from fundamentals to advanced tactics." },
+    { t: "Pro Coaching", d: "Licensed coaches committed to your long-term growth." },
+    { t: "Discipline", d: "We build athletes with the right mindset, on and off the pitch." },
+    { t: "Competitive Exposure", d: "Regular tournaments and inter-school league play." },
+    { t: "Safe Environment", d: "Inclusive, secure, and encouraging for every player." },
+    { t: "Growth Oriented", d: "We track every player's journey and celebrate milestones." },
 ];
 
 function WhyACE() {
@@ -720,7 +675,7 @@ function WhyACE() {
                                 transform: inView ? "none" : "translateY(16px)",
                             }}
                         >
-                            <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+
                             <div>
                                 <p
                                     className="font-black uppercase text-[#0B0612] leading-tight mb-1"
@@ -762,12 +717,14 @@ export default function FootballPrograms() {
         <div className="min-h-screen overflow-x-hidden" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             <Navbar />
             <Hero />
-            <Programs />
-            <TrustStats />
-            <Coaches />
-            <Events />
-            <Achievements />
-            <WhyACE />
+            <div className="[&>section]:py-10 lg:[&>section]:py-16">
+                <Programs />
+                <TrustStats />
+                <Coaches />
+                <Events />
+                <Achievements />
+                <WhyACE />
+            </div>
             <Footer />
         </div>
     );

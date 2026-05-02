@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Offerings from "@/components/Offerings";
 import WhyChooseAce from "@/components/WhyChooseAce";
 import CtaBanner from "@/components/CtaBanner";
+import OurTeam from "@/components/OutTeam";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Offerings />
       <WhyChooseAce />
       <CtaBanner />
+      <OurTeam />
     </Layout>
   );
 };

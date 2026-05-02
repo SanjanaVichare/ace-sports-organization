@@ -4,12 +4,12 @@ import footballImg from "@/assets/football.jpg";
 import calisthenicsImg from "@/assets/calisthenics.jpg";
 import cricketImg from "@/assets/cricket.jpg";
 import archeryImg from "@/assets/archery.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Target, Dumbbell, Trophy, Crosshair } from "lucide-react";
 
 const offerings = [
   {
-    title: "Football",
+    title: "ACEXI",
     image: footballImg,
     link: "/programs/football",
     desc: "Position-specific training & match simulation",
@@ -21,20 +21,6 @@ const offerings = [
       "Video analysis sessions",
     ],
     tagline: "Train like a pro",
-  },
-  {
-    title: "Calisthenics",
-    image: calisthenicsImg,
-    link: "/programs/calisthenics",
-    desc: "Bodyweight strength & progressive skills",
-    icon: Dumbbell,
-    details: [
-      "Progressive skill tracks",
-      "Muscle-up & handstand paths",
-      "Core & mobility work",
-      "Beginner to advanced levels",
-    ],
-    tagline: "Master your body",
   },
   {
     title: "Cricket",
@@ -49,6 +35,20 @@ const offerings = [
       "Match pressure simulation",
     ],
     tagline: "Precision every delivery",
+  },
+  {
+    title: "CalFit",
+    image: calisthenicsImg,
+    link: "/programs/calisthenics",
+    desc: "Bodyweight strength & progressive skills",
+    icon: Dumbbell,
+    details: [
+      "Progressive skill tracks",
+      "Muscle-up & handstand paths",
+      "Core & mobility work",
+      "Beginner to advanced levels",
+    ],
+    tagline: "Master your body",
   },
   {
     title: "Archery",
@@ -68,6 +68,7 @@ const offerings = [
 
 const Offerings = () => {
   const ref = useFadeIn();
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
 
@@ -75,7 +76,7 @@ const Offerings = () => {
     <section id="offerings" className="py-20 bg-ace-bg-alt">
       <div ref={ref} className="container mx-auto px-4 section-fade-in">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 text-ace-text">
-          Our <span className="text-ace-purple">OFFERINGS</span>
+          Our <span className="text-ace-purple">CLIENTS</span>
         </h2>
 
         {/* ── Desktop: horizontal accordion ── */}
@@ -84,15 +85,16 @@ const Offerings = () => {
             const Icon = sport.icon;
             const isActive = activeIndex === i;
             return (
-              <div
+              <Link
                 key={sport.title}
+                to={sport.link}
                 onMouseEnter={() => setActiveIndex(i)}
                 onClick={() => setActiveIndex(i)}
                 className={`
-                relative overflow-hidden cursor-pointer
-                transition-all duration-500 ease-in-out
-                ${isActive ? "flex-[4]" : "flex-[1]"}
-              `}
+                  relative overflow-hidden cursor-pointer block
+                  transition-all duration-500 ease-in-out
+                  ${isActive ? "flex-[4]" : "flex-[1]"}
+                `}
               >
                 {/* Image */}
                 <img
@@ -127,7 +129,6 @@ const Offerings = () => {
                     : "opacity-0 translate-y-4 pointer-events-none"
                     }`}
                 >
-                  {/* Icon + tagline */}
                   <div className="flex items-center gap-2 mb-3">
                     <Icon size={14} className="text-ace-gold" />
                     <span className="text-ace-gold text-xs font-semibold uppercase tracking-widest">
@@ -140,7 +141,6 @@ const Offerings = () => {
                   </h3>
                   <p className="text-ace-surface/70 text-sm mb-5">{sport.desc}</p>
 
-                  {/* Detail bullets */}
                   <ul className="space-y-1.5 mb-6">
                     {sport.details.map((d) => (
                       <li key={d} className="flex items-center gap-2 text-ace-surface/80 text-sm">
@@ -150,15 +150,12 @@ const Offerings = () => {
                     ))}
                   </ul>
 
-                  <Link
-                    to={sport.link}
-                    className="flex items-center gap-2 text-ace-gold font-heading font-bold text-sm group/btn"
-                  >
+                  <div className="flex items-center gap-2 text-ace-gold font-heading font-bold text-sm group/btn">
                     Explore Program
                     <ArrowRight size={15} className="transition-transform group-hover/btn:translate-x-1" />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -172,7 +169,13 @@ const Offerings = () => {
               <div
                 key={sport.title}
                 className="rounded-xl overflow-hidden cursor-pointer"
-                onClick={() => setMobileOpen(isOpen ? null : i)}
+                onClick={() => {
+                  if (isOpen) {
+                    navigate(sport.link);
+                  } else {
+                    setMobileOpen(i);
+                  }
+                }}
               >
                 {/* Card header — always visible */}
                 <div className="relative h-[100px] flex items-end">
@@ -222,22 +225,18 @@ const Offerings = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      to={sport.link}
-                      className="flex items-center gap-1.5 text-ace-gold font-heading font-bold text-sm"
-                    >
-                      Explore Program <ArrowRight size={14} />
-                    </Link>
+                    <div className="flex items-center gap-1.5 text-ace-gold font-heading font-bold text-sm">
+                      Explore {sport.title} <ArrowRight size={14} />
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );
-}
+};
 
 export default Offerings;

@@ -1,6 +1,6 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-bg.jpg";
+import heroImg from "@/assets/hero-bg.png";
 
 const CONTACT_ITEMS = [
   { icon: Phone, label: "Call", value: "+91 84520 94237", href: "tel:+918452094237" },
