@@ -2,8 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import MoizaImg from "../assets/Moiza.jpeg";
 import JakeriyaImg from "../assets/Jakeriya.jpeg";
 import SidImg from "../assets/Sid.jpeg";
-import RiaanImg from "../assets/image.png";
-import SherwinImg from "../assets/Sherwin.jpeg";
+import RiaanImg from "../assets/image.jpeg";
+import SherwinImg from "../assets/sherwin1.jpg";
 
 // ─── TEAM DATA ────────────────────────────────────────────────────────────────
 const TEAM = [

@@ -23,7 +23,7 @@ const offerings = [
     tagline: "Train like a pro",
   },
   {
-    title: "Cricket",
+    title: "Sky high Cricket Academy",
     image: cricketImg,
     link: "/programs/cricket",
     desc: "Batting, bowling & fielding technique",
@@ -37,7 +37,7 @@ const offerings = [
     tagline: "Precision every delivery",
   },
   {
-    title: "CalFit",
+    title: "CalFit Calisthenics Park",
     image: calisthenicsImg,
     link: "/programs/calisthenics",
     desc: "Bodyweight strength & progressive skills",
@@ -51,7 +51,7 @@ const offerings = [
     tagline: "Master your body",
   },
   {
-    title: "Archery",
+    title: "Alpha Sports Academy-Archery",
     image: archeryImg,
     link: "/programs/archery",
     desc: "Precision, focus & competitive marksmanship",
@@ -83,7 +83,7 @@ const Offerings = () => {
             color: "#0B0612",
           }}
         >
-          Our <span style={{ color: "#4B1FA7" }}>Programs</span>
+          Our <span style={{ color: "#4B1FA7" }}>Clients</span>
         </h2><br></br>
 
         {/* ── Desktop: horizontal accordion ── */}
