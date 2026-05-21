@@ -11,7 +11,7 @@ const offerings = [
   {
     title: "ACEXI",
     image: footballImg,
-    link: "/programs/football",
+    link: "https://www.acexifc.com/",
     desc: "Position-specific training & match simulation",
     icon: Trophy,
     details: [
