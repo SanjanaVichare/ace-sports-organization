@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/herobg.jpeg";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
